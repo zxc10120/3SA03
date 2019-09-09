@@ -27,8 +27,11 @@ class App extends React.Component {
     if (guess.length == this.state.chars.length) {
       if (guess.join('').toString() == this.state.word) {
         this.setState({ guess: [], completed: true })
+        this.setState({ guess: [], falsed: false })
       } else {
+        this.setState({ guess: [], completed: false })
         this.setState({ guess: [], attempt: this.state.attempt + 1 })
+        this.setState({ guess: [], falsed: true })
       }
     }
   }
@@ -58,6 +61,9 @@ class App extends React.Component {
         <div>ทดลองครั้งที่ {this.state.attempt}</div>
         {
           this.state.completed && <h4>ถูกต้อง!!!</h4>
+        }
+        {
+          this.state.falsed && <h4>ผิดนะค้าบ ลองใหม่อีกที</h4>
         }
       </div>
     )
