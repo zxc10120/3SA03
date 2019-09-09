@@ -45,7 +45,7 @@ class App extends React.Component {
             />
           ))
         }
-        <h2>Selected</h2>
+        <h2>ที่เลือกอยู่</h2>
         {
           Array.from(this.state.guess).map((item, index) => (
             <CharacterCard
@@ -55,9 +55,9 @@ class App extends React.Component {
             />
           ))
         }
-        <div>ลองใหม่ครั้งที่ {this.state.attempt}</div>
+        <div>ทดลองครั้งที่ {this.state.attempt}</div>
         {
-          this.state.completed && <h4>Complete</h4>
+          this.state.completed && <h4>ถูกต้อง!!!</h4>
         }
       </div>
     )
